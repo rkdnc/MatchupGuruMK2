@@ -1,8 +1,23 @@
 const express = require("express");
-const mongoose = require("mongoose");
+const mysql = require("mysql");
 const app = express();
 const PORT = process.env.PORT || 3001;
 const models = require("./models");
+const keys = require("./config/keys").dbpw;
+
+
+//DB connection
+
+const connection = mysql.createConnection({
+  host: "localhost",
+  user:"root",
+  password: keys,
+  database: "matchup_guru"
+});
+
+connection.connect();
+
+//Add models here?
 
 const passport = require("passport");
 const session = require('express-session');
@@ -22,18 +37,12 @@ app.use(express.static("client/build"));
 
 // // Add routes, both API and view
 // const routes = require("./routes")(passport);
-app.use('/',routes);
+// app.use('/',routes);
 
 
-// Set up promises with mongoose
-mongoose.Promise = global.Promise;
-// Connect to the Mongo DB
-//add mongo heroku uri
-mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/matchup-guru-development"
-);
+
 
 // Start the API server
 app.listen(PORT, function() {
-  console.log("🌎  ==> API Server now listening");
+  console.log(`You have reached nirvana on port ${PORT}`);
 });
