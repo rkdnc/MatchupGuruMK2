@@ -7,6 +7,7 @@ create table decks(
     format_name varchar(25),
     deck_name varchar(100),
     season varchar(10),
+    createdAt timestamp not null,
     primary key (id)
 );
 
@@ -21,6 +22,7 @@ create table results(
     username varchar(25),
     event_type varchar(10),
     season varchar(10),
+    createdAt timestamp not null,
     primary key (id)
 );
 
@@ -31,6 +33,7 @@ create table articles(
     body text,
     author varchar(25),
     tags varchar(100),
+    createdAt timestamp not null,
     primary key(id)
 );
 
@@ -39,5 +42,6 @@ create table gurus(
     username varchar(25),
     password char(60),
     email varchar(50),
+    createdAt timestamp not null,
     primary key (id)
 );
