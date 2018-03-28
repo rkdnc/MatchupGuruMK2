@@ -41,6 +41,10 @@ const orm = {
             cb(result);
         });
     },
+
+    //Find by Format function maybe?
+
+    
     /* Creating new results.
     Table would be one of articles, decks, gurus, or results.
     columns would be derived from the table, so you know what column to update. Values are what is provided from the client. CB is just a callback function*/
