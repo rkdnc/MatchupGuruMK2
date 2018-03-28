@@ -1,13 +1,10 @@
-create database matchup_guru;
-
-use matchup_guru;
 
 create table decks(
 	id INTEGER AUTO_INCREMENT NOT NULL,
     format_name varchar(25),
     deck_name varchar(100),
     season varchar(10),
-    createdAt timestamp not null,
+    createdAtarticles timestamp not null,
     primary key (id)
 );
 
