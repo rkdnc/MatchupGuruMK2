@@ -1,10 +1,10 @@
 
 create table decks(
 	id INTEGER AUTO_INCREMENT NOT NULL,
-    format_name varchar(25),
+    format varchar(25),
     deck_name varchar(100),
     season varchar(10),
-    createdAtarticles timestamp not null,
+    createdAt timestamp not null,
     primary key (id)
 );
 
@@ -15,7 +15,7 @@ create table results(
     wins integer,
     losses integer,
     draw boolean default false,
-    format_name varchar(25),
+    format varchar(25),
     username varchar(25),
     event_type varchar(10),
     season varchar(10),

@@ -42,9 +42,27 @@ const orm = {
         });
     },
 
-    //Find by Format function maybe?
+    /* Finding an item by it's parameter. Mainly used to find individual formats for results, or pull for each user */
+    findByValue: function (table, col, param, vals, cb) {
+        let queryString = 'SELECT ' + col + ' FROM ' + table + ' WHERE ' + param + '= ' + vals + ';';
+        connection.query(queryString, (err, result) => {
+            if (err) {
+                throw err;
+            }
+            cb(result);
+        })
+    },
+    /* Find an item by both the user and the format */
+    findByUserAndFormat: function (table, user, format, cb) {
+        let queryString = 'SELECT * FROM ' + table + ' WHERE username=' + user + ' AND format=' + format + ';';
+        connection.query(queryString, (err, result) => {
+            if (err) {
+                throw err;
+            }
+            cb(result);
+        })
+    },
 
-    
     /* Creating new results.
     Table would be one of articles, decks, gurus, or results.
     columns would be derived from the table, so you know what column to update. Values are what is provided from the client. CB is just a callback function*/
