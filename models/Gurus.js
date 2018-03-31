@@ -4,8 +4,11 @@ const Guru = {
     all: cb => {
         orm.findAll('gurus', res => cb(res))
     },
-    byId: (table, col, param, vals, cb) =>{
+    byId: (param, vals, cb) =>{
         orm.findByValue('gurus', 'id', param, vals, res => cb(res));
+    },
+    byValue: (param, col, val, cb) => {
+        orm.findByValue('gurus', col, param, val, res => cb(res));
     },
     create: (cols, vals, cb) =>{
         orm.create('gurus', cols, vals, res => cb(res));

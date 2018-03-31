@@ -1,8 +1,16 @@
 const express = require('express');
-const connection = require('./config/connection')
+const connection = require('./config/connection');
+const passport = require('passport');
+const flash = require('connect-flash');
+const bodyParser = require('body-parser');
 require('dotenv').config();
 //Initialize Express
 const app = express();
+
+//Set up body-parser
+app.use(bodyParser());
+
+
 
 const PORT = process.env.PORT || 3001;
 
