@@ -1,17 +1,14 @@
-const mysql = require("mysql");
-require("dotenv").config();
+require('dotenv').config();
 
-let connection;
-
-if (process.env.JAWSDB_URL) {
-    connection = mysql.createConnection(processs.env.JAWSDB_URL);
-} else {
-    connection = mysql.createConnection({
-        host: 'localhost',
-        user: 'root',
+module.exports = {
+    development: {
+        database: process.env.DB_NAME,
+        username: 'root',
         password: process.env.DB_PASS,
-        database: 'matchup_guru'
-    });
-};
-
-module.exports = connection;
+        host: '127.0.0.1',
+        dialect: 'mysql'
+    },
+    production: {
+        //add stuff here for JawsDB
+    }
+}
