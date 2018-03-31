@@ -7,8 +7,8 @@ module.exports = {
         password: process.env.DB_PASS,
         host: '127.0.0.1',
         dialect: 'mysql'
-    },
-    production: {
-        //add stuff here for JawsDB
     }
+    // production: {
+    //     //add stuff here for JawsDB
+    // }
 }

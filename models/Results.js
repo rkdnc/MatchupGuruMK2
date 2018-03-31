@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-    const Result = sequelize.define('Result', {
+    const Result = sequelize.define("Result", {
         deckName: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -22,11 +22,11 @@ module.exports = function (sequelize, DataTypes) {
             validate: {
                 min: 0,
                 max: 2
-            },
+            }
         },
         draw: {
             type: DataTypes.BOOLEAN,
-            defaultValue: false,
+            defaultValue: false
         },
         user: {
             type: DataTypes.STRING,
@@ -39,6 +39,6 @@ module.exports = function (sequelize, DataTypes) {
         season: {
             type: DataTypes.STRING,
             allowNull: false
-        },
+        }
     })
 };

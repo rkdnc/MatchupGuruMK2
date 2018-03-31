@@ -1,20 +1,20 @@
 module.exports = function (sequelize, DataTypes) {
-    const Article = sequelize.define('Article', {
+    const Article = sequelize.define("Article", {
         author: {
             type: DataTypes.STRING,
             allowNull: false
         },
         title: {
             type: DataTypes.TEXT,
-            allowNull: false,
+            allowNull: false
         },
         body: {
             type: DataTypes.TEXT,
-            allowNull: false,
+            allowNull: false
         },
         image: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: false
         },
         format: {
             type: DataTypes.STRING,

@@ -8,7 +8,7 @@ module.exports = function (sequelize, DataTypes) {
             unique: true,
             validate: {
                 len: [1, 20],
-                isAlphanumeric: true,
+                isAlphanumeric: true
             }
         },
         email: {

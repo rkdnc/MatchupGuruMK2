@@ -1,9 +1,8 @@
 module.exports = function (sequelize, DataTypes) {
-    const Deck = sequelize.define('Deck', {
+    const Deck = sequelize.define("Deck", {
         name: {
             type: DataTypes.STRING,
-            allowNull: False,
-            unique: false
+            allowNull: false
         },
         format: {
             type: DataTypes.STRING,
@@ -11,7 +10,7 @@ module.exports = function (sequelize, DataTypes) {
         },
         season: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: false
         },
         description: {
             type: DataTypes.STRING,
@@ -20,5 +19,5 @@ module.exports = function (sequelize, DataTypes) {
                 len: [10, 255]
             }
         }
-    })
-}
+    });
+};
