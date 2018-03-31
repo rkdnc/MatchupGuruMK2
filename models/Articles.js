@@ -21,4 +21,5 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: true
         }
     });
+    return Article;
 };

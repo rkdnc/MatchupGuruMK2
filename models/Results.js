@@ -9,7 +9,7 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false
         },
         wins: {
-            type: DataTypes.INT,
+            type: DataTypes.INTEGER,
             allowNull: false,
             validate: {
                 min: 0,
@@ -17,7 +17,7 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
         losses: {
-            type: DataTypes.INT,
+            type: DataTypes.INTEGER,
             allowNull: false,
             validate: {
                 min: 0,
@@ -40,5 +40,6 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false
         }
-    })
+    });
+    return Result;
 };
