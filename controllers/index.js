@@ -1,7 +1,7 @@
 
 
 module.exports = {
-    // Articles: require('./articles'),
+    Articles: require('./articles'),
     Decks: require('./decks'),
     Results: require('./results'),
     Users: require('./users'),

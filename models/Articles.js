@@ -8,17 +8,18 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.TEXT,
             allowNull: false
         },
-        body: {
+        bodyText: {
             type: DataTypes.TEXT,
-            allowNull: false
-        },
-        image: {
-            type: DataTypes.STRING,
             allowNull: false
         },
         format: {
             type: DataTypes.STRING,
             allowNull: true
+        },
+        published: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: false
         }
     });
     return Article;
