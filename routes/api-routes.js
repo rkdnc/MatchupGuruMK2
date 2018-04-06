@@ -8,24 +8,29 @@ const passport = require('../config/passport');
 module.exports = app => {
 
     //Probably want to divide this by controller or by route, possibly further split the code, but I need a working product first
-    //GET requests
-    app.get('/api/results/:format/:season', controllers.Results.findByFormat);
-    app.get('/stats/:user/:format', controllers.Results.findByUser);
-    app.get('/decks/:format/:season', controllers.Decks.findByFormat);
-    
+    //Article routes
+    app.get('/api/articles', controllers.Articles.findAll);
+    app.get('/api/articles/recent', controllers.Articles.findLastThree);
+    app.post('/api/articles',controllers.Articles.createNewArticle);
+    app.delete('/api/articles', controllers.Articles.delete);
+    app.patch('/api/articles', controllers.Articles.update);
 
-    //POST requests
-    app.post('/results/create/:format/:season', controllers.Results.createResult);
-    app.post('/decks/:format/:season', controllers.Decks.createDeck);
-    app.post('/articles/newarticle',controllers.Articles.createNewArticle)
-    //Users
+    //Deck Routes
+    app.get('/api/decks/:format/:season', controllers.Decks.findByFormat);
+    app.post('/api/decks/:format/:season', controllers.Decks.createDeck);
+    app.patch('/api/decks/:format/:season', controllers.Decks.updateDeck);
+
+    //Results routes
+    app.get('/api/results/:format/:season', controllers.Results.findByFormat);
+    app.get('/api/stats/:user/:format', controllers.Results.findByUser);
+    app.post('/api/results/:format/:season', controllers.Results.createResult);
+
+    //Seasons routes
+
+    //User routes
     app.post('/api/login', passport.authenticate('local'), controllers.Users.loginUser);
     app.post('/api/signup', controllers.Users.createUser);
-
-    //PATCH requests
-    app.patch('/decks/:format/:season', controllers.Decks.updateDeck)
-    app.patch('/api/updateuser', controllers.Users.updateUser)
-
-    //DELETE requests
+    app.patch('/api/updateuser', controllers.Users.updateUser);
     app.delete('/api/updateuser', controllers.Users.deleteUser)
+
 };
