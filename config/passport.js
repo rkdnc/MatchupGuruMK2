@@ -11,7 +11,7 @@ passport.use(new LocalStrategy(
         //When a user tries to sign in, execute this:
         db.User.findOne({
             where: {
-                email: email
+                username: username
             }
         }).then(function(dbUser) {
             //If tere is no user with that username

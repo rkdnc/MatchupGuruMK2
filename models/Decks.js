@@ -14,10 +14,7 @@ module.exports = function (sequelize, DataTypes) {
         },
         description: {
             type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [10, 255]
-            }
+            allowNull: false
         }
     });
     return Deck;

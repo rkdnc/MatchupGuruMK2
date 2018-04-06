@@ -1,25 +1,21 @@
-const passport = require('passport');
-const LocalStrategy = require('passport-local');
+const db = require('../models');
 
-// passport.use(new LocalStrategy(
-//     function(username, password, done){
-//         User.findOne({ username: username}, function(err, user){
-//             if (err) {return done(err); }
-//             if (!user) {
-//                 return done(null, false, {message: 'Incorrect username'});
-//             }
-//             if (!user.validPassword(password)) {
-//                 return done(null, false, {message: 'Incorrect password'});
-//             }
-//             return done(null, user);
-//         });
-//     }
-// ));
+module.exports = {
 
-//The login form should be submitted to the server via POST method, using authenticate()
+    createUser: function(req, res) {
+        db.User.create({
+            username: req.body.username,
+            email: req.body.email,
+            password: req.body.password
+        }).then(()=> {
+            res.redirect(307, '/')
+        }).catch(err => {
+            console.log(err);
+            res.json(err);
+        })
+    },
+    loginUser: function(req, res){
+        res.send('You are logged in');
+    }
 
-/* app.post('/login',
-    passport.authenticate('local', { successRedirect: '/',
-    falureRedirect: '/login',
-    failureFlash: true })
-); */
+}

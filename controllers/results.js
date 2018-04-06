@@ -1,19 +1,14 @@
 const db = require('../models');
-// const sequelize = require('sequelize');
 
 module.exports = {
-    findByformat: function (req, res) {
-        // console.log('controller test')
-        // res.send('test controller');
+    findByFormat: function (req, res) {
         //Takes the format as an argument and finds results based on that format
         db.Result.findAll({
             where: {
                 format: req.params.format,
                 season: req.params.season
             }
-        }).then(dbFormat => {
-            res.json(dbFormat);
-        })
+        }).then(dbFormat => res.json(dbFormat))
 
         //for each results in format
         //count each unique deck name
@@ -29,10 +24,7 @@ module.exports = {
                 format: req.params.format
             },
             order: [['updatedAt', 'DESC']]
-        }).then(dbUserResults => {
-            let results = dbUserResults;
-            res.send(results);
-        })
+        }).then(dbUserResults => res.send(dbUserResults))
     },
     createResult: function(req, res) {
         const deckName = req.body.deckName;
@@ -55,10 +47,7 @@ module.exports = {
             eventType: eventType,
             season: season
         }).then(dbResult => res.send(dbResult))
-        //takes the passed in information and creates a new result
-        //Will probably need to be the bulkCreate from Sequelize
-        //accepts multple form entries to assign data from fields to be sent to the database
-    }
+    },
     // //Update could go here, but we won't allow users to edit records yet
     // delete: (req, res) => {
     //     //deletes record based on ID
