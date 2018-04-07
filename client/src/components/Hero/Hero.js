@@ -1,16 +1,15 @@
 import React from 'react';
-import './Nav.css';
+import './Hero.css';
 import icon from '../../images/icon.png';
 
-const Nav = () => (
-    <nav className='navbar is-standard is-fixed-top' aria-label='main navigation'>
+const Hero = () => (
+    <section className='hero is-medium is-standard'>
+        <div className='hero-head'>
+        <nav className='navbar is-standard is-fixed-top' aria-label='main navigation'>
         <div className='navbar-brand'>
             <a className='navbar-item' href='/'>
                 <img src={icon} alt='Matchup Guru' />
             </a>
-            <div className='navbar-item'>
-            <p className='is-text is-size-4'> Matchup Guru </p>
-            </div>
             <div className='navbar-burger'>
             <i class='fas fa-bars is-icon'></i>
             {/* Stuff goes here */}
@@ -25,6 +24,18 @@ const Nav = () => (
             </div>
         </div>
     </nav>
+        </div>
+        <div className='hero-body'>
+            <div className='container'>
+                <h1 className='title'>
+                    Welcome to Matchup Guru!
+                </h1>
+                <h2 className='subtitle'>
+                    A crowdsourced Magic: The Gathering metagame website.
+                </h2>
+            </div>
+        </div>
+    </section>
 )
 
-export default Nav;
+export default Hero;
