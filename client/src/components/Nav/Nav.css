@@ -1,0 +1,15 @@
+.is-standard {
+    background-color: #7A08FA;
+}
+
+.is-text {
+    color: #FFFFFF;
+    margin: 10px;
+}
+.navbar-item:hover {
+    background-color: #A82FFC;
+}
+
+.is-icon {
+    margin: 5px;
+}
