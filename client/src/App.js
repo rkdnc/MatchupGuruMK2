@@ -5,8 +5,8 @@ import Splash from './pages/Splash';
 import Results from './pages/Results'
 
 const App = () => (
-  // <Splash />
-  <Results />
+  <Splash />
+  // <Results />
 )
 
 export default App;

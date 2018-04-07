@@ -21,11 +21,12 @@ const Hero = () => (
                 <a className='navbar-item is-text' href='/articles'><i class='far fa-list-alt is-icon'></i>Articles</a>
                 <a className='navbar-item is-text' href='/decks'><i class='fas fa-th-large is-icon'></i>Decks</a>
                 <a className='navbar-item is-text' href='/results'><i class='far fa-plus-square is-icon'></i>Results</a>
+                {/* Add modal button trigger here */}
             </div>
         </div>
     </nav>
         </div>
-        <div className='hero-body'>
+        <div className='hero-body has-text-centered'>
             <div className='container'>
                 <h1 className='title'>
                     Welcome to Matchup Guru!
