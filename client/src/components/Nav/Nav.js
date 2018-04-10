@@ -13,7 +13,7 @@ const Nav = () => (
             </div>
             <div className='navbar-burger'>
             <i class='fas fa-bars is-icon'></i>
-            {/* Stuff goes here */}
+            {/* Mobile responsive stuff goes here */}
             </div>
         </div>
         <div className='navbar-menu'>

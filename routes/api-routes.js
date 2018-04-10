@@ -12,8 +12,8 @@ module.exports = app => {
     app.get('/api/articles', controllers.Articles.findAll);
     app.get('/api/articles/recent', controllers.Articles.findLastThree);
     app.post('/api/articles',controllers.Articles.createNewArticle);
-    app.delete('/api/articles', controllers.Articles.delete);
-    app.patch('/api/articles', controllers.Articles.update);
+    app.delete('/api/articles/:id', controllers.Articles.delete);
+    app.patch('/api/articles/:id', controllers.Articles.update);
 
     //Deck Routes
     app.get('/api/decks/:format/:season', controllers.Decks.findByFormat);
@@ -24,8 +24,6 @@ module.exports = app => {
     app.get('/api/results/:format/:season', controllers.Results.findByFormat);
     app.get('/api/stats/:user/:format', controllers.Results.findByUser);
     app.post('/api/results/:format/:season', controllers.Results.createResult);
-
-    //Seasons routes
 
     //User routes
     app.post('/api/login', passport.authenticate('local'), controllers.Users.loginUser);
