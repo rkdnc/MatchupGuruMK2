@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Hero from '../components/Hero';
-import Login from '../components/Login';
-import ReactDOM from 'react-dom';
+import ArticleWrapper from '../components/ArticleWrapper';
 
-const modalRoot = document.getElementById('modal')
 
-const Splash = () => (
 
-        <Hero />
-
-)
+class Splash extends Component {
+        // Stuff
+        render() {
+                return(
+                        <div>
+                        <Hero />
+                        <ArticleWrapper />
+                        </div>
+                )
+        }
+}
 export default Splash;

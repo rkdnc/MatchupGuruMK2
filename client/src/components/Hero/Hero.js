@@ -11,16 +11,16 @@ const Hero = () => (
                 <img src={icon} alt='Matchup Guru' />
             </a>
             <div className='navbar-burger'>
-            <i class='fas fa-bars is-icon'></i>
+            <i className='fas fa-bars is-icon'></i>
             {/* Stuff goes here */}
             </div>
         </div>
         <div className='navbar-menu'>
             <div className='navbar-end'>
-                <a className='navbar-item is-text' href='/metagame'><i class='fas fa-chart-pie is-icon'></i>Metagame</a>
-                <a className='navbar-item is-text' href='/articles'><i class='far fa-list-alt is-icon'></i>Articles</a>
-                <a className='navbar-item is-text' href='/decks'><i class='fas fa-th-large is-icon'></i>Decks</a>
-                <a className='navbar-item is-text' href='/results'><i class='far fa-plus-square is-icon'></i>Results</a>
+                <a className='navbar-item is-text' href='/metagame'><i className='fas fa-chart-pie is-icon'></i>Metagame</a>
+                <a className='navbar-item is-text' href='/articles'><i className='far fa-list-alt is-icon'></i>Articles</a>
+                <a className='navbar-item is-text' href='/decks'><i className='fas fa-th-large is-icon'></i>Decks</a>
+                <a className='navbar-item is-text' href='/results'><i className='far fa-plus-square is-icon'></i>Results</a>
                 {/* Add modal button trigger here */}
             </div>
         </div>

@@ -50,7 +50,7 @@ export default {
         return axios.post('/api/signup');
     },
     updateUser: function() {
-        return axois.patch('/api/updateuser/');
+        return axios.patch('/api/updateuser/');
     },
     deleteUser: function() {
         return axios.delete('/api/updateuser/')
