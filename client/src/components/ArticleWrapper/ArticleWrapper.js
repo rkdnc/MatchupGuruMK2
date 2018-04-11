@@ -26,8 +26,9 @@ class ArticleWrapper extends Component {
             <div className='columns'>
                 {this.state.articles.map(article => (
                     <ArticleCard
-                    author={article.author}
+                    key={article._id}
                     title={article.title}
+                    author={article.author}
                     format={article.format}
                     />
                 ))}

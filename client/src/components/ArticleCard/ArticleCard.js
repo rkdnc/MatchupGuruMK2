@@ -1,8 +1,8 @@
 import React from 'react';
-
-const ArticleCard = ({author, title, format}) => (
+import './ArticleCard.css';
+const ArticleCard = ({_id, author, title, format}) => (
 // Will need to be wrapped in a wrapper
-    <div className='column'>
+    <div className='column is-wrapper'>
         <div className='card'>
             <div className='card-image'>
             {/* Images inherited from the format would go here, but that's for a later iteration */}
@@ -13,8 +13,8 @@ const ArticleCard = ({author, title, format}) => (
             </div>
             <div className='card-content'>
                 <div className='content'>
-                    <p className='title'>{title}</p>
-                    <p className='subtitle'>{author}</p>
+                    <p className='is-size-3'>{title}</p>
+                    <p className='is-size-4'>{author}</p>
                     {/* Format tags color specific? Maybe? */}
                     {/* <span className='tag'>{format}</span> */}
                 </div>
