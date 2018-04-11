@@ -13,7 +13,6 @@ class ArticleWrapper extends Component {
                 this.setState({
                     articles: res.data
                 })
-                console.log(res)
             }
                 
             ).catch(err => console.log(err));

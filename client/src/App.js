@@ -1,12 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Splash from './pages/Splash';
-// import Results from './pages/Results'
+// import Splash from './pages/Splash';
+import Login from './pages/Login';
+
 
 const App = () => (
-  <Splash />
-  // <Results />
+  // <Splash />
+  <Login />
 )
 
 export default App;
