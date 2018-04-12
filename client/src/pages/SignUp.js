@@ -5,6 +5,7 @@ import API from '../utils/api';
 class SignUp extends Component {
     state= {
         username: "",
+        email: "",
         password: ""
     };
 
@@ -17,12 +18,13 @@ class SignUp extends Component {
 
     handleFormSubmit = event => {
         event.preventDefault();
-
+        const newUser = {
+            username: this.state.username,
+            email: this.state.email,
+            password: this.state.password
+        };
         if (this.state.username && this.state.password) {
-            API.createUser({
-                username: this.state.username,
-                password: this.state.password
-            })
+            API.createUser(newUser)
             .then(res => console.log('Signed up!'))
             .catch(err => console.log(err));
         }
@@ -48,6 +50,19 @@ class SignUp extends Component {
                     </div>
                 </div>
                 <div className='field'>
+                    <label className='label'>Email Address (optional)</label>
+                    <div className='control'>
+                        <input 
+                        value={this.state.email}
+                        name='email'
+                        className='input'
+                        type='text'
+                        placeholder='e.g. "something@website.com"'
+                        onChange={this.handleInputChange}
+                        />
+                    </div>
+                </div>
+                <div className='field'>
                     <label className='label'>Password</label>
                     <div className='control'>
                     <input
@@ -59,6 +74,7 @@ class SignUp extends Component {
                     onChange={this.handleInputChange}
                     />
                 </div>
+                <br />
                 <div className='field'>
                     <p className='control'>
                         <button 
