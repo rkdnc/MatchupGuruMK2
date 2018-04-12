@@ -3,40 +3,37 @@ import Nav from '../components/Nav';
 import API from '../utils/api';
 
 class Login extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            username: '',
-            password: ''
-        };
+   state ={
+       username: "",
+       password: ""
+   };
 
-        this.handleInputChange = this.handeChange.bind(this);
-        this.handleFormSubmit = this.handleFormSubmit.bind(this);
-    }
+        // this.handleInputChange = this.handleInputChange.bind(this);
+        // this.handleFormSubmit = this.handleFormSubmit.bind(this);
+    
 
     handleInputChange = event => {
-        const username = event.target.username;
-        const password = event.target.password;
+        const { name, value } = event.target;
         this.setState({
-            username: username,
-            password: password
+            [name]: value
         });
     };
 
     handleFormSubmit = event => {
         event.preventDefault();
+
         if (this.state.username && this.state.password) {
             API.loginUser({
                 username: this.state.username,
                 password: this.state.password
             })
-            .then(res => console.lot('Logged in!'))
+            .then(res => console.log('Logged in!'))
             .catch(err => console.log(err));
         }
     };
 
 
-    render(){
+    render() {
         return (
             <div>
                 <Nav />
@@ -46,10 +43,11 @@ class Login extends Component {
                     <label className='label'>Username</label>
                     <div className='control'>
                         <input 
+                        value={this.state.username}
+                        name='username'
                         className='input'
                         type='username'
                         placeholder='e.g. "mishrasux123"'
-                        value={this.state.username}
                         onChange={this.handleInputChange}
                         />
                     </div>
@@ -58,17 +56,18 @@ class Login extends Component {
                     <label className='label'>Password</label>
                     <div className='control'>
                     <input
+                    value={this.state.password}
+                    name='password'
                     className='input'
                     type='password'
                     placeholder='Was it WUBERG123? Hm....'
-                    value={this.state.password}
                     onChange={this.handleInputChange}
                     />
                 </div>
                 <div className='field'>
                     <p className='control'>
                         <button 
-                        className='button is-success'
+                        className='button is-info'
                         onClick={this.handleFormSubmit}
                         >
                         Log In
