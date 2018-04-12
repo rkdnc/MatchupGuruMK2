@@ -26,7 +26,9 @@ module.exports = app => {
     app.post('/api/results/:format/:season', controllers.Results.createResult);
 
     //User routes
-    app.post('/api/login', passport.authenticate('local'), controllers.Users.loginUser);
+    app.post('/api/login', passport.authenticate('local'), function(req, res){
+        res.send('You ar elogged in!');
+    });
     app.post('/api/signup', controllers.Users.createUser);
     app.patch('/api/updateuser', controllers.Users.updateUser);
     app.delete('/api/updateuser', controllers.Users.deleteUser)

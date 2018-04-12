@@ -21,14 +21,15 @@ class Login extends Component {
 
     handleFormSubmit = event => {
         event.preventDefault();
-
+        const user = {
+            username: this.state.username,
+            password: this.state.password
+        };
+        console.log(user);
         if (this.state.username && this.state.password) {
-            API.loginUser({
-                username: this.state.username,
-                password: this.state.password
-            })
+            API.loginUser(user)
             .then(res => console.log('Logged in!'))
-            .catch(err => console.log(err));
+            .catch(err => console.log(err.response));
         }
     };
 

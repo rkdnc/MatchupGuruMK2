@@ -1,6 +1,19 @@
-import React from 'react';
+import React, { Component } from 'react';
+import Nav from '../components/Nav';
+import BtnWrapper from '../components/BtnWrapper';
 
-//Navbar
+class CreateDeck extends Component {
+
+
+    render() {
+        return (
+            <div>
+            <Nav />
+
+            
+            </div>
+        )
+    }
 
 //Format selector buttons
 
@@ -9,3 +22,6 @@ import React from 'react';
 //Deck description textarea
 
 //Submit button
+}
+
+export default CreateDeck;

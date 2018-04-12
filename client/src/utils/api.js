@@ -43,11 +43,12 @@ export default {
     },
 
     //User endpoints
-    loginUser: function () {
-        return axios.post('/api/login');
+    loginUser: function (user) {
+        console.log("Sign-In hit", user);
+        return axios.post('/api/login',user);
     },
-    createUser: function() {
-        return axios.post('/api/signup');
+    createUser: function(user) {
+        return axios.post('/api/signup', user);
     },
     updateUser: function() {
         return axios.patch('/api/updateuser/');

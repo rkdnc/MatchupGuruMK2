@@ -14,7 +14,7 @@ passport.use(new LocalStrategy(
                 username: username
             }
         }).then(function(dbUser) {
-            //If tere is no user with that username
+            //If there is no user with that username
             if (!dbUser) {
                 return done (null, false, {
                     message: 'Incorrect username.'
