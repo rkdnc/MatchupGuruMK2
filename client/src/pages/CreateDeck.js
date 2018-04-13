@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 import Nav from '../components/Nav';
-import BtnWrapper from '../components/BtnWrapper';
+import TabWrapper from '../components/TabWrapper';
 
 class CreateDeck extends Component {
-
+    state = {
+         
+    }
+     
 
     render() {
         return (
             <div>
             <Nav />
-
-            
+            <TabWrapper />
             </div>
         )
     }
