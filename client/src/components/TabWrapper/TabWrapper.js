@@ -3,21 +3,26 @@ import './TabWrapper.css';
 import Tabs from '../Tabs';
 
 class TabWrapper extends Component {
-    state = {
-        format:''
-    }
+    constructor(props) {
+        super(props);
+        this.state = {
+            format:''
+        }
+        this.onClick = this.onClick.bind(this);
+}
 
     onClick = event =>{
         event.preventDefault();
-        const format = event.target.format;
+        const format = event.target.value;
         this.setState({
             format: format
         });
+        console.log(this.state.format);
     };
 
     render() {
         return(
-            <div className='tabs is-centered'>
+            <div className='tabs is-centered is-large is-toggle is-fullwidth'>
                 <ul>
                     <Tabs value='Standard' onClick={this.onClick} name='Standard' />
                     <Tabs value='Frontier' onClick={this.onClick} name='Frontier' />

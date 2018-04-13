@@ -2,11 +2,10 @@ import React from 'react';
 import './Tabs.css';
 
 const Tabs = props => (
-    <li 
-    value={props.value}
+    <li
     onClick={props.onClick}
     >
-    <a>{props.name}</a>
+    <a id={props.id}>{props.name}</a>
     </li>
 )
 

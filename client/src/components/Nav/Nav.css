@@ -14,7 +14,7 @@ a:hover {
     margin-left: 5px;
 }
 .navbar-item:hover {
-    background-color: rgb(58, 21, 87) !important;
+    background-color: #a82ffc !important;
 }
 
 
@@ -22,6 +22,6 @@ a:hover {
     margin: 5px;
 }
 .navbar {
-    background: linear-gradient(to bottom right, #511E78, #8B2F97);
+    background: linear-gradient(to bottom right, #7A08FA, #A82FFC);
     font-family: 'Cinzel', serif;
 }

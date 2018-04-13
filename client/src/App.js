@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 // import Splash from './pages/Splash';
 // import SignUp from './pages/SignUp';
@@ -6,11 +6,16 @@ import './App.css';
 import CreateDeck from './pages/CreateDeck';
 
 
-const App = () => (
+class App extends Component  {
   // <Splash />
   // <SignUp />
   // <Login />
-  <CreateDeck />
-)
+  render() {
+    return(
+      <CreateDeck />
+    )
+  }
+
+}
 
 export default App;
