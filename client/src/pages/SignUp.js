@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Nav from '../components/Nav';
+import Form from '../components/Form';
 import API from '../utils/api';
 
 class SignUp extends Component {
@@ -7,6 +8,7 @@ class SignUp extends Component {
         username: "",
         email: "",
         password: ""
+        
     };
 
     handleInputChange = event => {
@@ -36,44 +38,31 @@ class SignUp extends Component {
                 <Nav />
                 <div className='columns'>
                 <div className='column is-half is-offset-one-quarter'>
-                <div className='field'>
-                    <label className='label'>Username</label>
-                    <div className='control'>
-                        <input 
-                        value={this.state.username}
-                        name='username'
-                        className='input'
-                        type='username'
-                        placeholder='e.g. "mishrasux123"'
-                        onChange={this.handleInputChange}
-                        />
-                    </div>
-                </div>
-                <div className='field'>
-                    <label className='label'>Email Address (optional)</label>
-                    <div className='control'>
-                        <input 
-                        value={this.state.email}
-                        name='email'
-                        className='input'
-                        type='text'
-                        placeholder='e.g. "something@website.com"'
-                        onChange={this.handleInputChange}
-                        />
-                    </div>
-                </div>
-                <div className='field'>
-                    <label className='label'>Password</label>
-                    <div className='control'>
-                    <input
+                    <Form
+                    label='Username'
+                    value={this.state.username}
+                    name='username'
+                    type='username'
+                    placeholder='e.x. "mishrasux123"'
+                    handleInputChange={this.handleInputChange}
+                    />
+                    <Form
+                    label='Email Address (Optional)'
+                    value={this.state.email}
+                    name='email'
+                    type='text'
+                    placeholder='something@website.com'
+                    handleInputChange={this.handleInputChange}
+                    />
+                    <Form
+                    label='Password'
                     value={this.state.password}
                     name='password'
-                    className='input'
                     type='password'
-                    placeholder='Was it WUBERG123? Hm....'
-                    onChange={this.handleInputChange}
+                    placeholder='wuberg&5'
+                    handleInputChange={this.handleInputChange}
                     />
-                </div>
+                
                 <br />
                 <div className='field'>
                     <p className='control'>
@@ -88,7 +77,7 @@ class SignUp extends Component {
             </div>
             </div>
             </div>
-            </div>
+            
         )
     }
 

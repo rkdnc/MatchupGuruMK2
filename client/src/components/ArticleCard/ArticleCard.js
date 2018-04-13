@@ -1,5 +1,7 @@
 import React from 'react';
 import './ArticleCard.css';
+
+
 const ArticleCard = ({_id, author, title, format}) => (
 // Will need to be wrapped in a wrapper
     <div className='column is-wrapper'>

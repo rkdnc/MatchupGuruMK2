@@ -44,7 +44,6 @@ export default {
 
     //User endpoints
     loginUser: function (user) {
-        console.log("Sign-In hit", user);
         return axios.post('/api/login',user);
     },
     createUser: function(user) {
