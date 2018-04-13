@@ -5,35 +5,36 @@ import Tabs from '../Tabs';
 class TabWrapper extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            format:''
-        }
+        this.state ={format: ''};
         this.onClick = this.onClick.bind(this);
-}
-
+    }
     onClick = event =>{
-        event.preventDefault();
-        const format = event.target.value;
+        // event.preventDefault();
         this.setState({
-            format: format
-        });
-        console.log(this.state.format);
+            format: event.target.id
+        },
+    () => console.log(this.state));
     };
+     
 
     render() {
-        return(
-            <div className='tabs is-centered is-large is-toggle is-fullwidth'>
+        return (
+            <div className='columns'>
+                <div className='column is-10 is-offset-1'>
+                {/* <TabWrapper /> */}
+                <div className='tabs is-centered is-large is-toggle is-fullwidth'>
                 <ul>
-                    <Tabs value='Standard' onClick={this.onClick} name='Standard' />
-                    <Tabs value='Frontier' onClick={this.onClick} name='Frontier' />
-                    <Tabs value='Modern' onClick={this.onClick} name='Modern' />
-                    <Tabs value='Legacy' onClick={this.onClick} name='Legacy' />
-                    <Tabs value='Pauper' onClick={this.onClick} name='Pauper' />
+                    <Tabs id='Standard' onClick={this.onClick} name='Standard' />
+                    <Tabs id='Frontier' onClick={this.onClick} name='Frontier' />
+                    <Tabs id='Modern' onClick={this.onClick} name='Modern' />
+                    <Tabs id='Legacy' onClick={this.onClick} name='Legacy' />
+                    <Tabs id='Pauper' onClick={this.onClick} name='Pauper' />
                 </ul>
+            </div>
+                </div>
             </div>
         )
     }
 }
-//make new tab
-//when tab is clicked, set state to that format
+
 export default TabWrapper;
