@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import Nav from '../components/Nav';
+import Form from '../components/Form';
+import SubmitBtn from '../components/SubmitBtn';
 import API from '../utils/api';
 
 class Login extends Component {
@@ -7,10 +9,6 @@ class Login extends Component {
        username: "",
        password: ""
    };
-
-        // this.handleInputChange = this.handleInputChange.bind(this);
-        // this.handleFormSubmit = this.handleFormSubmit.bind(this);
-    
 
     handleInputChange = event => {
         const { name, value } = event.target;
@@ -40,42 +38,27 @@ class Login extends Component {
                 <Nav />
                 <div className='columns'>
                 <div className='column is-half is-offset-one-quarter'>
-                <div className='field'>
-                    <label className='label'>Username</label>
-                    <div className='control'>
-                        <input 
-                        value={this.state.username}
-                        name='username'
-                        className='input'
-                        type='username'
-                        placeholder='e.g. "mishrasux123"'
-                        onChange={this.handleInputChange}
-                        />
-                    </div>
-                </div>
-                <div className='field'>
-                    <label className='label'>Password</label>
-                    <div className='control'>
-                    <input
+                    <Form
+                    label='Username'
+                    value={this.state.username}
+                    name='username'
+                    type='username'
+                    placeholder='e.x. "mishrasux123"'
+                    handleInputChange={this.handleInputChange}
+                    />
+                    <Form
+                    label='Password'
                     value={this.state.password}
                     name='password'
-                    className='input'
                     type='password'
-                    placeholder='Was it WUBERG123? Hm....'
-                    onChange={this.handleInputChange}
+                    placeholder='Remember, we never have access to your password.'
+                    handleInputChange={this.handleInputChange}
                     />
-                </div>
-                <div className='field'>
-                    <p className='control'>
-                        <button 
-                        className='button is-info'
-                        onClick={this.handleFormSubmit}
-                        >
-                        Log In
-                        </button>
-                    </p>
-                </div>
-            </div>
+                <br />
+                <SubmitBtn
+                handleFormSubmit={this.handleFormSubmit}
+                text='Submit'
+                />
             </div>
             </div>
             </div>

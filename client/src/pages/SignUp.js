@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Nav from '../components/Nav';
 import Form from '../components/Form';
+import SubmitBtn from '../components/SubmitBtn';
 import API from '../utils/api';
 
 class SignUp extends Component {
@@ -64,16 +65,10 @@ class SignUp extends Component {
                     />
                 
                 <br />
-                <div className='field'>
-                    <p className='control'>
-                        <button 
-                        className='button is-info'
-                        onClick={this.handleFormSubmit}
-                        >
-                        Sign Up
-                        </button>
-                    </p>
-                </div>
+                <SubmitBtn
+                handleFormSubmit={this.handleFormSubmit}
+                text='Submit'
+                />
             </div>
             </div>
             </div>
