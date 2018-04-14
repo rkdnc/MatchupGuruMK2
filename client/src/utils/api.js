@@ -24,8 +24,8 @@ export default {
     getDecks: function(format, season) {
         return axios.get('/api/decks/' + format + '/' + season);
     },
-    createDeck: function (format, season) {
-        return axios.post('/api/decks/' + format + '/' + season);
+    createDeck: function (format, season, deck) {
+        return axios.post('/api/decks/' + format + '/' + season, deck);
     },
     updateDeck: function (format, season) {
         return axios.patch('/api/decks/' + format + '/' + season);

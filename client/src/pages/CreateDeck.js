@@ -3,23 +3,17 @@ import Nav from '../components/Nav';
 import TabWrapper from '../components/TabWrapper';
 import TextField from '../components/TextField';
 import SubmitBtn from '../components/SubmitBtn';
-import TextArea from '../components/TextArea';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
+
+
 import API from '../utils/api';
 
 class CreateDeck extends Component {
-    // constructor(props) {
-    //     super(props);
-    //     this.state ={
-    //         format: '',
-    //         deckName: '',
-    //         deckDesc: ''
-    //     };
-    //     // this.onClick = this.onClick.bind(this);
-    // }
     state = {
         format: '',
-        deckName:'',
-        deckDesc:''
+        name:'',
+        description:''
     }
     onClick = event =>{
         event.preventDefault();
@@ -36,17 +30,21 @@ class CreateDeck extends Component {
         });
     };
 
+    handleQuillChange = html => {
+        this.setState({description: html})
+    }
+
     handleFormSubmit = event => {
         event.preventDefault();
         const deck = {
-            name: this.state.deckName,
+            name: this.state.name,
             format: this.state.format,
             season: 'DOM',
-            description: this.state.deckDesc
+            description: this.state.description
         };
-        console.log(this.state);
-        if (this.state.deckName && this.state.deckDesc) {
-            API.createDeck(deck.format, deck.season)
+        // console.log(deck);
+        if (this.state.name && this.state.description) {
+            API.createDeck(deck.format, deck.season, deck)
             .then(res => console.log('Submitted!'))
             .catch(err => console.log(err));
         }
@@ -58,30 +56,30 @@ class CreateDeck extends Component {
             <div>
             <Nav />
             {/* Format selector buttons */}
-            <TabWrapper />
+            <TabWrapper onClick={this.onClick}/>
             {/* Deck name form */}
             <div className='columns'>
                 <div className='column is-half is-offset-one-quarter'>
-                <form>
-                    <TextField
-                    label='Deck Name'
-                    value={this.state.deckName}
-                    name='deckName'
-                    type='text'
-                    placeholder='Red Deck Wins'
-                    handleInputChange={this.handleInputChange}
-                    />
-                    <TextArea
-                    rows='10'
-                    name='deckDesc'
-                    value={this.state.deckDesc}
-                    handleInputChange={this.handleInputChange}
-                    />
-                    <br />
-                    <SubmitBtn
-                    handleFormSubmit={this.handleFormSubmit}
-                    text='Submit'
-                    />
+                <form onSubmit={this.handleFormSubmit}>
+                        <TextField
+                        label='Deck Name'
+                        value={this.state.name}
+                        name='name'
+                        type='text'
+                        placeholder='Red Deck Wins'
+                        handleChange={this.handleInputChange}
+                        />
+                        <ReactQuill
+                        onChange={this.handleQuillChange}
+                        value={this.state.description}
+                        placeholder='pls respond'
+                        />
+                        <br />
+                        <input
+                        className='button is-info'
+                        type='submit'
+                        value='Submit Deck'
+                        />
                 </form>
                 </div>
             </div>
@@ -91,11 +89,6 @@ class CreateDeck extends Component {
 
 
 
-//Deck Name form
-
-//Deck description textarea
-
-//Submit button
 }
 
 export default CreateDeck;

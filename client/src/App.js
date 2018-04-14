@@ -3,8 +3,8 @@ import './App.css';
 // import Splash from './pages/Splash';
 // import SignUp from './pages/SignUp';
 // import Login from'./pages/Login';
-// import CreateDeck from './pages/CreateDeck';
-import DecksView from './pages/DecksView';
+import CreateDeck from './pages/CreateDeck';
+// import DecksView from './pages/DecksView';
 
 
 class App extends Component  {
@@ -13,8 +13,8 @@ class App extends Component  {
   // <Login />
   render() {
     return(
-      // <CreateDeck />
-      <DecksView />
+      <CreateDeck />
+      // <DecksView />
     )
   }
 
