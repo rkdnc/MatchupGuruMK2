@@ -7,8 +7,8 @@ const DeckCard = ({name, season, description}) => (
             <header className='card-header'>
                 <p className='card-header-title'>{name}</p>
             </header>
-            <div className='card-content'>
-                {description}
+            <div className='card-content' dangerouslySetInnerHTML={{__html: description}}>
+               
             </div>
             <footer className='card-footer'>
                 <p className='card-footer-item'>
