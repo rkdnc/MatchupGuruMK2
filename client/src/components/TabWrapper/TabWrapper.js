@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './TabWrapper.css';
 import Tabs from '../Tabs';
 
@@ -8,11 +8,11 @@ const TabWrapper = props => (
                 {/* <TabWrapper /> */}
                 <div className='tabs is-centered is-large is-toggle is-fullwidth'>
                 <ul>
-                    <Tabs id='standard' onClick={props.onClick} name='Standard' />
-                    <Tabs id='frontier' onClick={props.onClick} name='Frontier' />
-                    <Tabs id='modern' onClick={props.onClick} name='Modern' />
-                    <Tabs id='legacy' onClick={props.onClick} name='Legacy' />
-                    <Tabs id='pauper' onClick={props.onClick} name='Pauper' />
+                    <Tabs id='Standard' onClick={props.onClick} name='Standard' />
+                    <Tabs id='Frontier' onClick={props.onClick} name='Frontier' />
+                    <Tabs id='Modern' onClick={props.onClick} name='Modern' />
+                    <Tabs id='Legacy' onClick={props.onClick} name='Legacy' />
+                    <Tabs id='Pauper' onClick={props.onClick} name='Pauper' />
                 </ul>
             </div>
                 </div>

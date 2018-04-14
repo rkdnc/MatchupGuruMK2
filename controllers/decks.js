@@ -1,5 +1,26 @@
 const db = require('../models');
 
+
+//These are helper functions to escape the HTML and parse it to go into the database. I took this frpm StackOverflow
+const entityMap = {
+    '&': '&amp;',
+  '<': '&lt;',
+  '>': '&gt;',
+  '"': '&quot;',
+  "'": '&#39;',
+  '/': '&#x2F;',
+  '`': '&#x60;',
+  '=': '&#x3D;'
+};
+
+function escapeHtml (string) {
+    return String(string).replace(/[&<>"'`=\/]/g, function (s) {
+      return entityMap[s];
+    });
+  };
+
+
+
 module.exports = {
     findByFormat: function (req, res) {
         //Takes format as an argument and finds all decks in that format
@@ -16,7 +37,7 @@ module.exports = {
         const name = req.body.name;
         const format = req.params.format;
         const season = req.params.season;
-        const description = req.body.description;
+        const description = escapeHtml(req.body.description);
 
         db.Deck.create({
             name: name,

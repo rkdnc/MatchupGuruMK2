@@ -8,7 +8,7 @@ const DeckCard = ({name, season, description}) => (
                 <p className='card-header-title'>{name}</p>
             </header>
             <div className='card-content'>
-                <p>{description}</p>
+                {description}
             </div>
             <footer className='card-footer'>
                 <p className='card-footer-item'>
