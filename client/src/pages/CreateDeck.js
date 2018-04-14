@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Nav from '../components/Nav';
 import TabWrapper from '../components/TabWrapper';
-import Form from '../components/Form';
+import TextField from '../components/TextField';
 import SubmitBtn from '../components/SubmitBtn';
 import TextArea from '../components/TextArea';
 import API from '../utils/api';
@@ -14,7 +14,7 @@ class CreateDeck extends Component {
     //         deckName: '',
     //         deckDesc: ''
     //     };
-    //     this.onClick = this.onClick.bind(this);
+    //     // this.onClick = this.onClick.bind(this);
     // }
     state = {
         format: '',
@@ -62,7 +62,8 @@ class CreateDeck extends Component {
             {/* Deck name form */}
             <div className='columns'>
                 <div className='column is-half is-offset-one-quarter'>
-                    <Form
+                <form>
+                    <TextField
                     label='Deck Name'
                     value={this.state.deckName}
                     name='deckName'
@@ -70,24 +71,18 @@ class CreateDeck extends Component {
                     placeholder='Red Deck Wins'
                     handleInputChange={this.handleInputChange}
                     />
-                    {/* <TextArea /> */}
                     <TextArea
                     rows='10'
                     name='deckDesc'
                     value={this.state.deckDesc}
                     handleInputChange={this.handleInputChange}
                     />
-                    {/* <ReactQuill 
-                    value={this.state.deckDesc}
-                    name='deckDesc'
-                    onChange={this.handleInputChange}
-                    /> */}
-                   
                     <br />
                     <SubmitBtn
                     handleFormSubmit={this.handleFormSubmit}
                     text='Submit'
                     />
+                </form>
                 </div>
             </div>
             </div>

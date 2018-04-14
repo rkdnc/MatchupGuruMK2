@@ -13,7 +13,7 @@ module.exports = {
     },
     createDeck: function(req, res) {
         //accepts the passed in information to send to the database
-        const name = req.body.deckName;
+        const name = req.body.name;
         const format = req.params.format;
         const season = req.params.season;
         const description = req.body.description;

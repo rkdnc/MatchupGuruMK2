@@ -1,7 +1,7 @@
 import React from 'react';
-import './Form.css';
+import './TextField.css';
 
-const Form = props => (
+const TextField = props => (
     
         <div className='field'>
             <label className='label'>{props.label}</label>
@@ -19,4 +19,4 @@ const Form = props => (
     
 );
 
-export default Form;
+export default TextField;

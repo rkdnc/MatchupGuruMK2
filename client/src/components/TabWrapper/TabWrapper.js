@@ -9,7 +9,7 @@ class TabWrapper extends Component {
         this.onClick = this.onClick.bind(this);
     }
     onClick = event =>{
-        // event.preventDefault();
+        event.preventDefault();
         this.setState({
             format: event.target.id
         },
@@ -24,11 +24,11 @@ class TabWrapper extends Component {
                 {/* <TabWrapper /> */}
                 <div className='tabs is-centered is-large is-toggle is-fullwidth'>
                 <ul>
-                    <Tabs id='Standard' onClick={this.onClick} name='Standard' />
-                    <Tabs id='Frontier' onClick={this.onClick} name='Frontier' />
-                    <Tabs id='Modern' onClick={this.onClick} name='Modern' />
-                    <Tabs id='Legacy' onClick={this.onClick} name='Legacy' />
-                    <Tabs id='Pauper' onClick={this.onClick} name='Pauper' />
+                    <Tabs id='standard' onClick={this.onClick} name='Standard' />
+                    <Tabs id='frontier' onClick={this.onClick} name='Frontier' />
+                    <Tabs id='modern' onClick={this.onClick} name='Modern' />
+                    <Tabs id='legacy' onClick={this.onClick} name='Legacy' />
+                    <Tabs id='pauper' onClick={this.onClick} name='Pauper' />
                 </ul>
             </div>
                 </div>
