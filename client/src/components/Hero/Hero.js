@@ -1,6 +1,7 @@
 import React from 'react';
 import './Hero.css';
 import icon from '../../images/icon.png';
+import logo from '../../images/logo.png'
 
 const Hero = () => (
     <section className='hero is-medium is-standard'>
@@ -34,6 +35,9 @@ const Hero = () => (
                 <h2 className='subtitle'>
                     A crowdsourced Magic: The Gathering metagame website.
                 </h2>
+                <aside>
+                    <img src={logo} />
+                </aside>
             </div>
         </div>
     </section>

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Nav from '../components/Nav';
-import Form from '../components/Form';
+import TextField from '../components/TextField';
 import SubmitBtn from '../components/SubmitBtn';
 import API from '../utils/api';
 
@@ -17,7 +17,7 @@ class Login extends Component {
         });
     };
 
-    handleFormSubmit = event => {
+    handleTextAreaSubmit = event => {
         event.preventDefault();
         const user = {
             username: this.state.username,
@@ -38,7 +38,7 @@ class Login extends Component {
                 <Nav />
                 <div className='columns'>
                 <div className='column is-half is-offset-one-quarter'>
-                    <Form
+                    <TextField
                     label='Username'
                     value={this.state.username}
                     name='username'
@@ -46,7 +46,7 @@ class Login extends Component {
                     placeholder='e.x. "mishrasux123"'
                     handleInputChange={this.handleInputChange}
                     />
-                    <Form
+                    <TextField
                     label='Password'
                     value={this.state.password}
                     name='password'

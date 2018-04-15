@@ -2,10 +2,10 @@ import React from 'react';
 import './DeckCard.css';
 
 const DeckCard = ({name, season, description}) => (
-    <div className='column'>
-        <div className='card'>
+    <div className='tile is-child '>
+        <div className='card has-text-centered'>
             <header className='card-header'>
-                <p className='card-header-title'>{name}</p>
+                <p className='card-header-title is-centered'>{name}</p>
             </header>
             <div className='card-content' dangerouslySetInnerHTML={{__html: description}}>
                

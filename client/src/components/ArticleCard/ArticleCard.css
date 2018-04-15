@@ -1,3 +1,6 @@
 .card {
-    height: 250px;
+    font-family: 'Raleway', sans-serif;
+}
+.column {
+    margin-top: 15px;
 }

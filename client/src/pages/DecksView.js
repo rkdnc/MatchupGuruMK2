@@ -42,7 +42,8 @@ class DecksView extends Component {
             <div>
                 <Nav />
                 <TabWrapper />
-                <div className='columns'>
+                <div className='tile is-ancestor'>
+                <div className='tile is-parent'>
                 {this.state.decks.map(deck => (
                     <DeckCard
                     name={deck.name}
@@ -50,6 +51,7 @@ class DecksView extends Component {
                     season={deck.season}
                     />
                 ))}
+                </div>
                 </div>
 
             </div>

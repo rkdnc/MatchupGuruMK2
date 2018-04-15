@@ -6,7 +6,7 @@
 }
 
 .hero {
-    background: linear-gradient(to bottom right, #511E78, #8B2F97);
+    background: linear-gradient(to bottom right,  #7A08FA, #A82FFC);
     font-family: 'Cinzel', serif;
 }
 a:link {
@@ -33,5 +33,10 @@ a:hover {
     margin: 5px;
 }
 .navbar {
-    background: linear-gradient(to bottom right, #511E78, #8B2F97);
+    background: linear-gradient(to bottom right,  #7A08FA, #A82FFC);
 }
+
+/* .image {
+    height: 480px;
+    width: 490px;
+} */

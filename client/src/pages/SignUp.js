@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Nav from '../components/Nav';
-import Form from '../components/Form';
+import TextField from '../components/TextField';
 import SubmitBtn from '../components/SubmitBtn';
 import API from '../utils/api';
 
@@ -39,7 +39,7 @@ class SignUp extends Component {
                 <Nav />
                 <div className='columns'>
                 <div className='column is-half is-offset-one-quarter'>
-                    <Form
+                    <TextField
                     label='Username'
                     value={this.state.username}
                     name='username'
@@ -47,7 +47,7 @@ class SignUp extends Component {
                     placeholder='e.x. "mishrasux123"'
                     handleInputChange={this.handleInputChange}
                     />
-                    <Form
+                    <TextField
                     label='Email Address (Optional)'
                     value={this.state.email}
                     name='email'
@@ -55,7 +55,7 @@ class SignUp extends Component {
                     placeholder='something@website.com'
                     handleInputChange={this.handleInputChange}
                     />
-                    <Form
+                    <TextField
                     label='Password'
                     value={this.state.password}
                     name='password'

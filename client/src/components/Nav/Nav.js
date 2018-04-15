@@ -2,14 +2,14 @@ import React from 'react';
 import './Nav.css';
 import icon from '../../images/icon.png';
 
-const Nav = () => (
+const Nav = props => (
     <nav className='navbar is-standard' aria-label='main navigation'>
         <div className='navbar-brand'>
             <a className='navbar-item' href='/'>
                 <img src={icon} alt='Matchup Guru' />
             </a>
             <div className='navbar-item'>
-            <p className='is-text is-size-4'> Matchup Guru </p>
+            <a className='is-text is-size-4' href='/'> Matchup Guru </a>
             </div>
             <div className='navbar-burger'>
             <i className='fas fa-bars is-icon'></i>
@@ -22,6 +22,7 @@ const Nav = () => (
                 <a className='navbar-item is-text' href='/articles'><i className='far fa-list-alt is-icon'></i>Articles</a>
                 <a className='navbar-item is-text' href='/decks'><i className='fas fa-th-large is-icon'></i>Decks</a>
                 <a className='navbar-item is-text' href='/results'><i className='far fa-plus-square is-icon'></i>Results</a>
+                {props.isAuth}
             </div>
         </div>
     </nav>
