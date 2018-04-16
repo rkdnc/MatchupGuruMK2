@@ -30,7 +30,7 @@ class App extends Component  {
       email: this.state.email,
       password: this.state.password
     }
-    if (this.state,username && this.state.password){
+    if (this.state.username && this.state.password){
       API.createUser(newUser)
       .then(res => console.log('Signed Up!'))
       .catch(err => console.log(err))
