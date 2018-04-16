@@ -3,7 +3,7 @@ import './Hero.css';
 import icon from '../../images/icon.png';
 import logo from '../../images/logo.png'
 
-const Hero = () => (
+const Hero = props => (
     <section className='hero is-medium is-standard'>
         <div className='hero-head'>
         <nav className='navbar is-standard is-fixed-top' aria-label='main navigation'>
@@ -22,7 +22,7 @@ const Hero = () => (
                 <a className='navbar-item is-text' href='/articles'><i className='far fa-list-alt is-icon'></i>Articles</a>
                 <a className='navbar-item is-text' href='/decks'><i className='fas fa-th-large is-icon'></i>Decks</a>
                 <a className='navbar-item is-text' href='/results'><i className='far fa-plus-square is-icon'></i>Results</a>
-                {/* Add modal button trigger here */}
+                {props.isAuth}
             </div>
         </div>
     </nav>

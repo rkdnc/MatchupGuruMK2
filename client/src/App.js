@@ -7,10 +7,35 @@ import Login from'./pages/Login';
 import CreateDeck from './pages/CreateDeck';
 import DecksView from './pages/DecksView';
 // import Results from './pages/Results';
+import API from './utils/api';
 
 
 class App extends Component  {
+  state= {
+    username: "",
+    email:"",
+    password: "",
+    isAuth: false
+  };
 
+  handleInputChange = event => {
+    const {name, value} = event.target;
+    this.setState({[name]:value});
+  };
+
+  handleSignUp = event => {
+    event.preventDefault();
+    const newUser = {
+      username: this.state.username,
+      email: this.state.email,
+      password: this.state.password
+    }
+    if (this.state,username && this.state.password){
+      API.createUser(newUser)
+      .then(res => console.log('Signed Up!'))
+      .catch(err => console.log(err))
+    };
+  }
   render() {
     return(
       <Router>
