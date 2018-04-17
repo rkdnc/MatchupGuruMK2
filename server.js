@@ -12,7 +12,7 @@ const app = express();
 // Configure body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(express.static('public'));
+app.use(express.static("client/build"));
 
 app.use(session({secret: process.env.SECRET, resave: true, saveUnititialized: true}));
 app.use(passport.initialize());
