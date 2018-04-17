@@ -31,8 +31,8 @@ module.exports = app => {
     app.patch('/api/updateuser', controllers.Users.updateUser);
     app.delete('/api/updateuser', controllers.Users.deleteUser);
 
-    router.use(function(req, res) {
+    app.get('/', function(req, res) {
         res.sendFile(path.join(__dirname, "../client/build/index.html"));
-      });
+    })
 
 };

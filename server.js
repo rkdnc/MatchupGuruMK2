@@ -17,8 +17,8 @@ app.use(express.static('public'));
 app.use(session({secret: process.env.SECRET, resave: true, saveUnititialized: true}));
 app.use(passport.initialize());
 app.use(passport.session());
-const routes = require('./routes/api-routes')(app);
-app.use('/', routes)
+require('./routes/api-routes')(app);
+
 
 
 
