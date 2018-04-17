@@ -3,6 +3,7 @@ const db = require('./models');
 const bodyParser = require('body-parser');
 const session = require("express-session");
 const passport = require('./config/passport');
+const router = require('express').Router;
 require('dotenv').config();
 //Initialize Express
 const app = express();
@@ -17,7 +18,9 @@ app.use(session({secret: process.env.SECRET, resave: true, saveUnititialized: tr
 app.use(passport.initialize());
 app.use(passport.session());
 require('./routes/api-routes')(app);
-
+router.use(function(req, res) {
+    res.sendFile(path.join(__dirname, "../client/build/index.html"));
+  });
 
 
 

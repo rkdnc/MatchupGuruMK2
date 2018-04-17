@@ -6,8 +6,6 @@ const passport = require('../config/passport');
 
 
 module.exports = app => {
-
-    //Probably want to divide this by controller or by route, possibly further split the code, but I need a working product first
     //Article routes
     app.get('/api/articles', controllers.Articles.findAll);
     app.get('/api/articles/recent', controllers.Articles.findLastThree);
@@ -27,7 +25,7 @@ module.exports = app => {
 
     //User routes
     app.post('/api/login', passport.authenticate('local'), function(req, res){
-        res.send('You ar elogged in!');
+        res.send('You are logged in!');
     });
     app.post('/api/signup', controllers.Users.createUser);
     app.patch('/api/updateuser', controllers.Users.updateUser);
