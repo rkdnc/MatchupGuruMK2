@@ -17,10 +17,8 @@ app.use(express.static('public'));
 app.use(session({secret: process.env.SECRET, resave: true, saveUnititialized: true}));
 app.use(passport.initialize());
 app.use(passport.session());
-require('./routes/api-routes')(app);
-router.use(function(req, res) {
-    res.sendFile(path.join(__dirname, "../client/build/index.html"));
-  });
+const routes = require('./routes/api-routes')(app);
+app.use('/', routes)
 
 
 
