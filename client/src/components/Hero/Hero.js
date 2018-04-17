@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Hero.css';
 import icon from '../../images/icon.png';
 import logo from '../../images/logo.png'
@@ -8,7 +9,7 @@ const Hero = props => (
         <div className='hero-head'>
         <nav className='navbar is-standard is-fixed-top' aria-label='main navigation'>
         <div className='navbar-brand'>
-            <a className='navbar-item' href='/'>
+            <a className='navbar-item' to='/'>
                 <img src={icon} alt='Matchup Guru' />
             </a>
             <div className='navbar-burger'>
@@ -18,10 +19,10 @@ const Hero = props => (
         </div>
         <div className='navbar-menu'>
             <div className='navbar-end'>
-                <a className='navbar-item is-text' href='/metagame'><i className='fas fa-chart-pie is-icon'></i>Metagame</a>
-                <a className='navbar-item is-text' href='/articles'><i className='far fa-list-alt is-icon'></i>Articles</a>
-                <a className='navbar-item is-text' href='/decks'><i className='fas fa-th-large is-icon'></i>Decks</a>
-                <a className='navbar-item is-text' href='/results'><i className='far fa-plus-square is-icon'></i>Results</a>
+            <i className='fas fa-chart-pie is-icon'></i><Link className='navbar-item is-text' to='/metagame'>Metagame</Link>
+            <i className='far fa-list-alt is-icon'></i><Link className='navbar-item is-text' to='/articles'>Articles</Link>
+            <i className='fas fa-th-large is-icon'></i><Link className='navbar-item is-text' to='/decks'>Decks</Link>
+            <i className='far fa-plus-square is-icon'></i><Link className='navbar-item is-text' to='/results'>Results</Link>
                 {props.isAuth}
             </div>
         </div>

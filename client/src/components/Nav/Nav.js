@@ -17,11 +17,11 @@ const Nav = props => (
             </div>
         </div>
         <div className='navbar-menu'>
-            <div className='navbar-end'>
-                <a className='navbar-item is-text' href='/metagame'><i className='fas fa-chart-pie is-icon'></i>Metagame</a>
-                <a className='navbar-item is-text' href='/articles'><i className='far fa-list-alt is-icon'></i>Articles</a>
-                <a className='navbar-item is-text' href='/decks'><i className='fas fa-th-large is-icon'></i>Decks</a>
-                <a className='navbar-item is-text' href='/results'><i className='far fa-plus-square is-icon'></i>Results</a>
+        <div className='navbar-end'>
+            <i className='fas fa-chart-pie is-icon'></i><Link className='navbar-item is-text' to='/metagame'>Metagame</Link>
+            <i className='far fa-list-alt is-icon'></i><Link className='navbar-item is-text' to='/articles'>Articles</Link>
+            <i className='fas fa-th-large is-icon'></i><Link className='navbar-item is-text' to='/decks'>Decks</Link>
+            <i className='far fa-plus-square is-icon'></i><Link className='navbar-item is-text' to='/results'>Results</Link>
                 {props.isAuth}
             </div>
         </div>
