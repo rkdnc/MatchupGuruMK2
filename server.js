@@ -20,7 +20,9 @@ require('./routes/api-routes')(app);
 
 
 
-
+if (process.env.JAWSDB_URL) {
+    var sequelize = new Sequelize(process.env.JAWSDB_URL);
+  }
 const PORT = process.env.PORT || 3001;
 db.sequelize.sync().then(function () {
     app.listen(PORT, function () {
