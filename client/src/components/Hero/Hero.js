@@ -19,10 +19,10 @@ const Hero = props => (
         </div>
         <div className='navbar-menu'>
             <div className='navbar-end'>
-            <i className='fas fa-chart-pie is-icon'></i><Link className='navbar-item is-text' to='/metagame'>Metagame</Link>
-            <i className='far fa-list-alt is-icon'></i><Link className='navbar-item is-text' to='/articles'>Articles</Link>
-            <i className='fas fa-th-large is-icon'></i><Link className='navbar-item is-text' to='/decks'>Decks</Link>
-            <i className='far fa-plus-square is-icon'></i><Link className='navbar-item is-text' to='/results'>Results</Link>
+            <Link className='navbar-item is-text' to='/metagame'><i className='fas fa-chart-pie is-icon'></i>Metagame</Link>
+            <Link className='navbar-item is-text' to='/articles'><i className='far fa-list-alt is-icon'></i>Articles</Link>
+            <Link className='navbar-item is-text' to='/decks'><i className='fas fa-th-large is-icon'></i>Decks</Link>
+            <Link className='navbar-item is-text' to='/results'><i className='far fa-plus-square is-icon'></i>Results</Link>
                 {props.isAuth}
             </div>
         </div>
