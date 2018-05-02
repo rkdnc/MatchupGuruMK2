@@ -23,7 +23,7 @@ const Hero = props => (
             <Link className='navbar-item is-text' to='/articles'><i className='far fa-list-alt is-icon'></i>Articles</Link>
             <Link className='navbar-item is-text' to='/decks'><i className='fas fa-th-large is-icon'></i>Decks</Link>
             <Link className='navbar-item is-text' to='/results'><i className='far fa-plus-square is-icon'></i>Results</Link>
-                {props.isAuth}
+                {props.isAuth ? <Link className='navbar-item is-text' to='/logout'><i class="far fa-user"></i>Log Out</Link> : <Link className='navbar-item is-text' to='/login'><i class="far fa-user"></i>Log In </Link>}
             </div>
         </div>
     </nav>
